@@ -1,0 +1,150 @@
+/* Base styles (desktop) */
+.chat-container {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+}
+
+.whatsapp-btn {
+  background-color: #218D51;
+  width: 46px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: transform 0.2s;
+}
+
+.whatsapp-icon {
+  width: 30px;
+  height: 36px;
+  color: white;
+}
+
+.chat-pill-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0px;
+}
+
+.chat-pill {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 30px;
+  padding: 5px 9px;
+  /* font-size: 14px; */
+  font-size: 9px;
+  font-weight: 600;
+  color: #000;
+  box-shadow: 3px 3px #4F90A6;
+  white-space: nowrap;
+}
+
+.chat-close {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .chat-container {
+    bottom: 40px;
+    right: 15px;
+    gap: 8px;
+  }
+
+  .whatsapp-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .whatsapp-icon {
+    width: 25px;
+    height: 33px !important;
+  }
+
+  .chat-pill {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .chat-pill-wrapper {
+    gap: 8px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .chat-container {
+    bottom: 30px;
+    right: 15px;
+    gap: 6px;
+  }
+
+  .whatsapp-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .whatsapp-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .chat-pill {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .chat-pill-wrapper {
+    gap: 6px;
+  }
+}
+
+/* Small mobile view */
+@media (max-width: 480px) {
+  .chat-container {
+    bottom: 20px;
+    right: 10px;
+    gap: 5px;
+  }
+
+  .whatsapp-btn {
+    width: 31px;
+    height: 30px;
+  }
+
+  .whatsapp-icon {
+    width: 21px !important;
+    height: 30px !important;
+  }
+
+  .chat-pill {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .chat-pill-wrapper {
+    gap: 5px;
+  }
+}

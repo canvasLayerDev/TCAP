@@ -1,0 +1,388 @@
+
+
+.why-section {
+  padding-top: 140px; /* navbar + previous section gap */
+  padding-bottom: 120px;
+  background: #0b0b0b;
+  max-width: 1200px;
+}
+
+/* MAIN LAYOUT */
+.container-fluid-why {
+  margin: auto;
+  display: flex;
+  gap: 40px;                  
+  align-items: flex-start;
+  /* padding: 0 20px; */
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+     max-width: 1391px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+/* LEFT CONTENT */
+.why-left {
+  flex: 1.1;
+  max-width: 420px;
+  min-width: 280px; /* prevent being too small */
+}
+
+/* TITLES */
+.section-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  max-width: 520px;
+  margin-bottom: 45px;
+  margin-left: 10px;
+}
+
+/* FEATURE CARDS */
+.feature-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* CARD TEXT */
+.feature-card {
+  background: linear-gradient(180deg, rgba(30, 60, 120, 0.35), rgba(10, 20, 40, 0.55));
+  border-radius: 22px;
+  padding: 34px 32px 10px;
+  border: 1px solid rgba(90, 150, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 20px 60px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.9);
+  border-color: #4F90A6;
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -40% -20%;
+  height: 120px;
+  background: radial-gradient(50% 100% at 50% 100%, rgba(61, 160, 255, 0.35), transparent 70%);
+}
+
+.feature-card h3 {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 span {
+  color: #4da3ff !important;
+}
+
+.feature-card p {
+  font-size: 18px;
+  color: #bcbcbc;
+  line-height: 1.6;
+}
+
+/* RIGHT IMAGE */
+.why-right {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+}
+
+.choose-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 157px;
+}
+
+.choose-img {
+  width: 90%;
+  max-height: 667px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= MOBILE SMALL (320px – 374px) ================= */
+@media (min-width: 320px) and (max-width: 374px) {
+
+  .section-title {
+    font-size: 22px;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .feature-wrapper {
+    gap: 18px;
+  }
+
+  .feature-card {
+    padding: 20px 16px 12px;
+  }
+
+  .feature-card h3 {
+    font-size: 15px;
+  }
+
+  .feature-card p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  /* IMAGE WRAPPER — controls shape */
+  .choose-img-wrapper {
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 16px;
+    overflow: hidden;        /* 🔥 MOST IMPORTANT */
+  }
+
+  /* IMAGE — stays natural */
+  .choose-img {
+    width: 100%;
+    height: 250px;            /* ✅ no cut, no stretch */
+    display: block;          /* ✅ remove inline gap */
+    border-radius: 16px;
+    background: transparent;
+  }
+}
+
+/* ================= MOBILE MEDIUM (375px – 414px) ================= */
+@media (min-width: 375px) and (max-width: 414px) {
+
+  .section-title {
+    font-size: 24px;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 10.5px;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .feature-wrapper {
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 24px 23px;
+  }
+
+  .feature-card h3 {
+    font-size: 16px;
+  }
+
+  .feature-card p {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+   /* IMAGE WRAPPER — controls shape */
+  .choose-img-wrapper {
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 16px;
+    overflow: hidden;        
+  }
+
+  /* IMAGE — stays natural */
+  .choose-img {
+    width: 100%;
+    height: 250px;            
+    display: block;          
+    border-radius: 16px;
+    background: transparent;
+  }
+}
+
+
+/* ================= MOBILE LARGE (415px – 767px) ================= */
+@media (min-width: 415px) and (max-width: 767px) {
+
+  .why-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: 26px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .feature-card h3 {
+    font-size: 17px;
+  }
+
+  .feature-card p {
+    font-size: 14px;
+  }
+
+  /* IMAGE WRAPPER — controls shape */
+  /* .choose-img-wrapper {
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 16px;
+    overflow: hidden;        🔥 MOST IMPORTANT
+  } */
+
+.choose-img-wrapper {
+  width: 100%;
+  margin-top: 8px;   /* 🔥 gap kam */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+  /* IMAGE — stays natural */
+  .choose-img {
+    width: 100%;
+    height: 250px;            /* ✅ no cut, no stretch */
+    display: block;          /* ✅ remove inline gap */
+    border-radius: 16px;
+    background: transparent;
+  }
+}
+
+
+/* for image specially  */
+@media (max-width: 767px) {
+  .choose-img-wrapper {
+    margin-top: 30px;
+  }
+    .choose-img {
+    width: 150%;
+    height: 270px;            /* ✅ no cut, no stretch */
+    display: block;          /* ✅ remove inline gap */
+    border-radius: 18px;
+    background: transparent;
+  }
+
+  .feature-wrapper {
+    gap: 18px;
+  }
+
+  .why-container {
+    align-items: stretch;
+  }
+}
+
+
+
+
+/* ================= TABLET (768px – 1023px) ================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .why-container {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .section-subtitle {
+    font-size: 12px;
+    margin-bottom: 30px;
+  }
+
+  .feature-card p {
+    font-size: 15px;
+  }
+
+  .choose-img-wrapper {
+    margin-top: 60px;
+  }
+
+   /* IMAGE WRAPPER — controls shape */
+  .choose-img-wrapper {
+    width: 100%;
+    height: 500px;
+    margin-top: 16px;
+    border-radius: 8px;
+    overflow: hidden;        /* 🔥 MOST IMPORTANT */
+  }
+
+  /* IMAGE — stays natural */
+  .choose-img {
+    width: 100%;
+    height: 591px;            /* ✅ no cut, no stretch */
+    display: block;          /* ✅ remove inline gap */
+    border-radius: 16px;
+    background: transparent;
+  }
+}
+
+
+/* ================= LAPTOP (1024px – 1279px) ================= */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+  .why-section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  .section-title {
+    font-size: 42px;
+  }
+
+  .feature-card p {
+    font-size: 16px;
+  }
+
+  .choose-img-wrapper {
+    margin-top: 70px;
+  }
+
+  .choose-img {
+    max-height: 560px;
+  }
+}
+
+
+/* ================= DESKTOP (1280px+) ================= */
+@media (min-width: 1280px) {
+
+  .section-title {
+    font-size: 48px;
+  }
+
+  .choose-img {
+    max-height: 667px;
+  }
+}

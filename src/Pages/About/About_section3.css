@@ -1,0 +1,282 @@
+.rt-wrapper {
+  background: radial-gradient(circle at left, #1c2a00, #000);
+  color: #fff;
+  overflow: hidden;
+}
+.rt-company{
+  color: #bdbdbd;
+  font-size: 15px;
+  margin-left: -3px;
+}
+.review-text{
+  text-decoration: none;
+  color: #bdbdbd;
+
+}
+.rt-left-card {
+  position: relative;
+  height: 100%;
+  border-radius: 26px;
+  padding: 40px 28px;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  background-color: #ffffff0d;
+}
+
+.rtt-tag12 {
+  color: #4da3ff !important;
+}
+
+.rt-left-card h1 {
+  font-size: 64px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rt-stars {
+  color: #4da3ff;
+  letter-spacing: 3px;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.rt-left-card p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 26px;
+}
+
+.rt-left-card h5 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.rt-overlap-users {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.rt-overlap-users img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.rt-overlap-users img:not(:first-child) {
+  margin-left: -14px;
+}
+
+.rt-left-arrow,
+.rt-right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.rt-left-arrow {
+  /* right: -18px; */
+  left: -39px;
+  /* background-color: #0d6efd; */
+}
+
+.rt-right-arrow {
+  right: 0;
+  /* background-color: #0d6efd; */
+}
+
+.rt-right-card {
+  position: relative;
+  height: 100%;
+  padding: 40px 60px;
+}
+
+.rt-text {
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+.rt-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+/* 
+.rt-user-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+} */
+ .rt-user-avatar {
+  width: 56px;          
+  height: 56px;
+  border-radius: 50%;    
+  /* object-fit: cover;       */
+  object-fit: contain;
+  overflow: hidden;
+  background-color:white;
+  /* padding: 4px; */
+  border: 0px solid black; 
+  display: block;       
+}
+
+.rt-user-info h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rt-user-info span {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.badge2 {
+  color: #4da3ff !important;
+  letter-spacing: 2.1px;
+  font-size: 15px;
+}
+.rt-animate-wrapper {
+  animation: slideFromRight 0.6s ease-in-out;
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .rt-wrapper .row.align-items-center {
+    flex-direction: column;
+  }
+
+  .rt-left-card {
+    margin-bottom: 32px;
+    padding: 32px 24px;
+  }
+
+  .rt-left-card h1 {
+    font-size: 48px;
+  }
+
+  .rt-stars {
+    font-size: 22px;
+  }
+
+  .rt-right-card {
+    padding: 28px 30px;
+    text-align: left;
+  }
+
+  .rt-text {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  /* Arrows at bottom center */
+  .rt-left-arrow,
+  .rt-right-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    position: absolute;
+    bottom: 1px;
+    top: auto;
+    transform: none;
+  }
+
+  .rt-left-arrow {
+    left: 40%;
+  }
+
+  .rt-right-arrow {
+    left: 50%;
+  }
+}
+
+
+
+
+@media (max-width: 767px) {
+  .rt-wrapper .row.align-items-center {
+    flex-direction: column;
+  }
+
+  .rt-left-card {
+    margin-bottom: 26px;
+    padding: 28px 20px;
+  }
+
+  .rt-left-card h1 {
+    font-size: 40px;
+  }
+
+  .rt-stars {
+    font-size: 20px;
+  }
+
+  .rt-right-card {
+    padding: 20px 15px;
+    text-align: left;
+    position: relative;
+  }
+
+  .rt-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .rt-user {
+    justify-content: flex-start;
+  }
+  .rt-arrow-container{
+    margin-bottom: 50px;
+  }
+
+  /* Bottom arrows */
+  .rt-left-arrow,
+  .rt-right-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+    position: absolute;
+    bottom: 16px;
+    top: 15px;
+    transform: none;
+  }
+
+  .rt-left-arrow {
+    left: 30%;
+    margin-top: 293px
+  }
+
+  .rt-right-arrow {
+    left: 58%;
+    margin-top: 293px
+  }
+}

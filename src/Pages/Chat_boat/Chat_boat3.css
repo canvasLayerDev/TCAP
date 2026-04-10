@@ -1,0 +1,113 @@
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  background-color: #218D51;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  border: none;
+}
+
+.whatsapp-icon {
+  width: 33px;
+  height: 33px;
+  color: white;
+}
+
+/* Popup */
+.chat-popup {
+  position: absolute;
+  bottom: 70px; /* slightly above WhatsApp button */
+  right: 0;
+  background: #fff;
+  border-radius: 16px;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Arrow pointing down */
+.popup-footer-arrow {
+  position: absolute;
+  bottom: -10px;
+  right: 25px;
+  width: 20px;
+  height: 10px;
+  background: #fff;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+/* Header with close button */
+.popup-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 6px 10px;
+}
+
+.popup-close {
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Body content */
+.popup-body {
+  padding: 15px 12px;
+}
+
+.popup-body h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.popup-body p {
+  font-size: 14px;
+  margin: 6px 0 10px;
+}
+
+/* Chat pill inside popup */
+.chat-pill-wrapper-popup {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-pill-popup {
+  background: #000;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #F7C600; /* yellow shadow like your image */
+}
+
+.whatsapp-icon-popup {
+  width: 16px;
+  height: 16px;
+}

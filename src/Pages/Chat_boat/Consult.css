@@ -1,0 +1,84 @@
+.consult-container {
+  position: fixed;
+  bottom: 180px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 15px;
+}
+
+/* button */
+
+.consult-btn {
+  background-color: #218D51;
+  width: 46px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.consult-icon {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+/* pill */
+
+.consult-pill-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.consult-pill {
+  background: white;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 10px 12px;
+  font-size: 15px;
+  box-shadow: 4px 4px #4F90A6;
+  font-weight: 500;
+  color: black;
+}
+
+.consult-close {
+  background: black;
+  color: white;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+/* mobile */
+
+@media (max-width:768px){
+
+  .consult-container{
+    bottom:30px;
+    right:10px;
+  }
+
+  .consult-btn{
+    width:40px;
+    height:40px;
+  }
+
+  .consult-pill{
+    font-size:12px;
+    padding:6px 12px;
+  }
+
+}

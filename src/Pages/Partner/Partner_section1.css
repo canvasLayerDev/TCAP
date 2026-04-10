@@ -1,0 +1,308 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ================= BASE ================= */
+.ep-partner {
+  padding: 200px 20px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.ep-partner-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  border-radius: 36px;
+  border: 3px solid #2da8ff;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap; /* important for mobile */
+  /* margin-left: 25px; */
+   overflow: hidden;
+}
+
+.partner-left {
+  flex: 1;
+  padding: 60px 40px;
+}
+
+.partner-left h2 span {
+  color: #4da3ff;
+}
+
+.partner-left p {
+  margin: 20px 0;
+  opacity: 0.9;
+}
+
+.partner-stats {
+  display: flex;
+  gap: 40px;
+  margin: 30px 0;
+  /* white-space: nowrap; */
+}
+
+.partner-stat h3 {
+  color: white;
+}
+
+.partner-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.partner-feature span {
+  color: white;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.partner-feature p {
+  margin: 6px 0 0;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.partner-txt {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.partner-txt small {
+  display: inline; 
+  font-size: 20px;
+  font-weight: 600;
+  color: white !important;
+}
+
+.partner-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.partner-form-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 100px;
+}
+.partner-form-box input,
+.partner-form-box select {
+  color: white !important;
+}
+
+.partner-form-box h2 {
+  margin-bottom: 25px;
+}
+
+.partner-form-box input,
+.partner-form-box select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: transparent !important;
+  border: 1px solid #2d7cff;
+  border-radius: 10px;
+  /* color: white; */
+  color: #5D6063;
+  outline: none;
+}
+.partner-form-box select option {
+  color: black;        /* text readable */
+  background: white;   /* dropdown bg */
+}
+.partner-form-box button {
+  width: 100%;
+  padding: 12px;
+  /* background: #4da3ff; */
+   background: #2d7cff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+.partner-form-box button:hover {
+  background: #1b5edc;
+}
+
+/* ONLY CLICK / FOCUS EFFECT */
+.partner-form-box input:focus,
+.partner-form-box select:focus {
+  /* background-color: #f4f1ea; cream */
+  border-color: #f4f1ea;
+  outline: none;
+}
+
+
+.partner-contact {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+/* ================= DESKTOP >=1200px ================= */
+/* Base CSS is sufficient */
+
+/* ================= LAPTOP 992px – 1199px ================= */
+@media (max-width: 1199px) {
+  .ep-partner {
+    padding: 160px 20px;
+  }
+
+  .ep-partner-box {
+    gap: 40px;
+  }
+
+  .partner-form-box {
+    width: 70%;
+  }
+}
+
+/* ================= TABLET 768px – 991px ================= */
+@media (max-width: 991px) {
+  .ep-partner {
+    padding: 120px 20px;
+  }
+
+  .ep-partner-box {
+    flex-direction: column;   /* LEFT on top, FORM below */
+    gap: 40px;
+  }
+
+  .partner-left,
+  .partner-right {
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .partner-form-box {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .partner-form-box input:focus,
+  .partner-form-box select:focus {
+    background-color: #f4f1ea; /* cream */
+    border-color:  #2d7cff;
+    outline: none;
+  }
+}
+
+/* ================= LARGE MOBILE 576px – 767px ================= */
+@media (max-width: 767px) {
+  .ep-partner {
+    padding: 90px 15px;
+  }
+
+  .partner-left {
+    padding: 30px 15px;
+  }
+
+  .partner-right {
+    padding: 20px 15px;
+  }
+
+  .partner-form-box {
+    padding: 25px;
+    height: auto;
+  }
+
+  .partner-feature span {
+    font-size: 24px;
+  }
+
+  .partner-txt,
+  .partner-txt small {
+    font-size: 18px;
+  }
+  .partner-form-box input:focus,
+  .partner-form-box select:focus {
+    background-color: #f4f1ea; /* cream */
+    border-color: #f4f1ea;
+    outline: none;
+  }
+}
+
+
+
+/* 🔥 CRITICAL MOBILE FIX */
+@media (max-width: 575px) {
+  /* Make the partner box full width with proper padding */
+  .ep-partner-box {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Slightly increase left box width */
+  .partner-left {
+    width: 100%;
+    padding: 35px 20px; /* slightly bigger padding */
+  }
+
+  /* Partner stats side by side instead of stacking */
+  .partner-stats {
+    flex-wrap: nowrap;     /* force them in a row */
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .partner-stat,
+  .ep-stat {
+    flex: 1;               /* each takes equal space */
+    text-align: center;    /* center content */
+  }
+
+  /* Adjust text sizes for small screens */
+  .partner-txt,
+  .partner-txt small {
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .partner-feature span {
+    font-size: 22px;
+  }
+
+  .partner-form-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+  .partner-left p{
+    font-size: 12px;
+  }
+  .partner-form-box input:focus,
+  .partner-form-box select:focus {
+    background-color: #f4f1ea; /* cream */
+    border-color: #f4f1ea;
+    outline: none;
+  }
+  
+}
+
+

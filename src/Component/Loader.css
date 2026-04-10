@@ -1,0 +1,132 @@
+
+/* Loader.css */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* 
+.loader-container h1 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 34px;
+  background: linear-gradient(90deg,
+      #000 0%,
+      #fff 50%,
+      #888 60%,
+      #fff 100%
+      );
+  background-size: 200% 100%;
+  padding: 20px;
+  background-position: right bottom;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: revealText 2s forwards ease-out, shine 2.5s linear infinite 2s;
+}
+
+@keyframes revealText {
+  to {
+    background-position: left bottom;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .loader-container h1 {
+    font-size: 30px;
+  }
+} */
+
+
+
+/* Loader.css */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000; /* background dark so effect is visible */
+  overflow: hidden;
+}
+
+.loader-container h1 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 20px;
+
+
+  background: linear-gradient(
+    90deg,
+    #4da3ff 0%,
+    rgba(77, 163, 255, 0.3) 50%,
+    #4da3ff 100%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* animations */
+  animation: revealText 2s forwards ease-out, shine 2.5s linear infinite 2s;
+}
+
+@keyframes revealText {
+  to {
+    background-position: left bottom;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .loader-container h1 {
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.3;
+    padding: 16px;
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .loader-container h1 {
+    text-align: center;
+    font-size: 34px;
+    line-height: 1.4;
+    padding: 12px;
+    word-break: break-word;
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  .loader-container h1 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,87 @@
+.social-section {
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.join-subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #4da3ff;
+  margin-bottom: 10px;
+}
+
+.join-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px !important;
+}
+
+.join-title span {
+  color: #4da3ff !important;
+}
+
+/* CONTAINER - ICONS IN ONE LINE */
+.social-container {
+  display: flex;
+  flex-wrap: wrap; /* Mobile par line break hone dega */
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CIRCULAR ICON CARDS */
+.social-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px; /* Size adjust kar sakte hain */
+  height: 70px;
+  border-radius: 50%; /* Rounded circle */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-card:hover {
+  background: #4da3ff; /* Hover par color change */
+  /* transform: translateY(-5px); */
+  border-color: #4da3ff;
+}
+
+.social-card .icon {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* Icons white rahenge default mein */
+}
+
+.social-card:hover .icon {
+  color: #fff;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 768px) {
+  .join-title {
+    font-size: 30px;
+  }
+  
+  .social-card {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .social-card .icon {
+    font-size: 22px;
+  }
+
+  .social-container {
+    gap: 15px;
+  }
+}

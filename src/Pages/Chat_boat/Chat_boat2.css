@@ -1,0 +1,232 @@
+/* BASE STYLES (Desktop) */
+.wa-chatbox {
+  position: fixed;
+  bottom: 142px;
+  right: 10px;
+  width: 182px;
+  height: 45%;
+  background: #fff;
+  border-radius: 28px;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-right: 6px solid #4F90A6;
+  transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.wa-chatbox.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wa-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.wa-header .arrow {
+  background: #4F90A6;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.wa-chatbox h3 {
+  margin: 13px 0 8px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+
+.wa-chatbox p {
+  margin: 0 0 7px;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #000;
+}
+
+.wa-btn {
+  position: relative;
+  width: 133px;
+  height: 79px;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 16px;
+  background: #1c1c1c;
+  color: #fff;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.wa-btn::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 100%;
+  height: 100%;
+  background: #4F90A6;
+  border-radius: 16px;
+  z-index: -1;
+}
+
+.wa-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: #4F90A6;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boat-text {
+  margin-left: 12px;
+}
+.wa-powered{
+  color: #000;
+  font-size: 12px;
+}
+
+/* SHARP POINTY TAIL */
+.wa-sharp-pointy-tail {
+  position: absolute;
+  right: 35px;
+  bottom: -45px;
+  width: 45px;
+  height: 46px;
+  background: white;
+  border-right: 2.5px solid black;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.wa-sharp-pointy-tail::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: white;
+}
+
+
+
+
+/* Laptop / Medium screens (~1024px) */
+@media screen and (max-width: 1024px) {
+  .wa-chatbox {
+    width: 170px;        /* slightly smaller than desktop */
+    height: 44%;
+    bottom: 130px;
+    padding: 18px;
+  }
+
+  .wa-btn {
+    width: 125px;
+    height: 75px;
+    padding: 0 14px;
+  }
+
+  .wa-header .arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+  }
+
+  .wa-sharp-pointy-tail {
+    right: 30px;
+    bottom: -40px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Tablet / Medium-small screens (~768px) */
+@media screen and (max-width: 768px) {
+  .wa-chatbox {
+    width: 160px;
+    height: 29%;
+    bottom: 105px;
+    padding: 16px;
+    right: 7px;
+  }
+.wa-powered{
+  /* color: #000; */
+  font-size: 10px;
+}
+  .wa-btn {
+    width: 120px;
+    height: 70px;
+    padding: 0 12px;
+  }
+
+  .wa-header .arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .wa-sharp-pointy-tail {
+    right: 28px;
+    bottom: -38px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Mobile / Small screens (~480px) */
+@media screen and (max-width: 480px) {
+  .wa-chatbox {
+    width: 140px;
+    height: 40%;
+    bottom: 80px;
+    padding: 14px;
+    right: 1px;
+  }
+.wa-powered{
+  /* color: #000; */
+  font-size: 9px;
+}
+  .wa-btn {
+    width: 110px;
+    height: 65px;
+    padding: 0 10px;
+  }
+
+  .wa-header .arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .wa-sharp-pointy-tail {
+    right: 22px;
+    bottom: -34px;
+    width: 35px;
+    height: 35px;
+  }
+}

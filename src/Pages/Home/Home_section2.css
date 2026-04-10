@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.basket-grid {
+  overflow-x: hidden;
+}
+
+
+
+
+
+/* ===================== BASKETS SECTION ===================== */
+.baskets {
+  background: radial-gradient(circle at top, #0f1b2d, #050914);
+  color: #fff;
+  width: 100%;
+  padding: 60px 0 80px;
+}
+
+/* ===================== CONTAINER ===================== */
+.container-fluid-basket {
+  max-width: 1391px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================== HEADING ===================== */
+.baskets h2 {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  margin-top: 57px;
+}
+
+/* ===================== SUBTITLE ===================== */
+.subtitle {
+  max-width: 560px;
+  margin: 12px auto 48px;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.85;
+  text-align: center;
+}
+
+/* ===================== GRID ===================== */
+.basket-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* ===================== CARD ===================== */
+.card {
+  position: relative;
+  padding: 32px 32px 32px 64px;
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 0, 0, 0.45)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================== ICON ===================== */
+.icon-home {
+  position: absolute;
+  top: 24px;
+  left: 22px;
+  font-size: 32px;
+  color: #4da3ff;
+}
+
+/* ===================== TEXT ===================== */
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.85;
+  color: #bcbcbc;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* --------- 1024px --------- */
+@media (max-width: 1024px) {
+  .baskets h2 {
+    font-size: 40px;
+  }
+
+  .basket-grid {
+    gap: 24px;
+  }
+}
+
+/* --------- TABLET --------- */
+@media (max-width: 768px) {
+  .basket-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .baskets h2 {
+    font-size: 30px;
+  }
+
+  .card {
+    padding: 28px 22px 28px 60px;
+  }
+
+  .icon-home {
+    font-size: 28px;
+  }
+}
+
+/* --------- MOBILE --------- */
+@media (max-width: 480px) {
+  .baskets {
+    padding: 40px 0 50px;
+  }
+
+  .baskets h2 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .card {
+    padding: 22px 18px 22px 52px;
+    border-radius: 18px;
+  }
+
+  .icon-home {
+    font-size: 24px;
+    top: 18px;
+    left: 16px;
+  }
+
+  .card h3 {
+    font-size: 19px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+}

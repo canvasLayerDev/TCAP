@@ -1,0 +1,410 @@
+/* ============================= */
+/* BLOG SECTION — FULL CSS       */
+/* ============================= */
+
+.container-fluid-blog {
+  max-width: 1391px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.blog-wrapper {
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.blog-heading {
+  font-size: 42px;
+}
+
+
+/* GRID */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+
+/* CARD */
+.blog-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 60, 120, 0.35),
+    rgba(10, 20, 40, 0.55)
+  );
+  border-radius: 22px;
+  padding: 20px;
+  border: 2px solid rgba(90, 150, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.35s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+  border-color: rgba(150, 160, 255, 0.4);
+}
+
+
+/* IMAGE */
+
+.blog-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+}
+
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.6s ease, filter 0.5s ease;
+}
+
+.blog-card:hover .blog-img {
+  transform: scale(1.06);
+  filter: saturate(1.1);
+}
+
+
+/* BODY */
+
+.blog-body {
+  padding: 20px 0 0 0;
+}
+
+
+/* INDEX */
+
+.blog-index {
+  font-size: 13px;
+  color: #4da3ff;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+
+/* ================= TITLE FIX ================= */
+/* 2 line height fix */
+
+.blog-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 12px;
+  margin-top: 0;
+  transition: color 0.3s;
+
+  line-height: 1.3;
+
+  /* ✅ 2 line fix */
+  min-height: calc(1.3em * 2);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* DESC WRAPPER */
+
+.blog-desc-wrapper {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  gap: 6px;
+}
+
+
+/* DESC */
+
+.blog-desc {
+  flex: 1;
+  height: 60px;
+  overflow-y: scroll;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  margin: 0;
+  padding: 0;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.blog-desc::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Custom scrollbar */
+
+.blog-scrollbar {
+  width: 4px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.blog-scrollbar-thumb {
+  width: 4px;
+  background: #4da3ff;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 16px;
+  display: none;
+}
+
+
+/* FOOTER */
+
+.blog-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  height: 52px;
+}
+
+
+/* DATE */
+
+.blog-date {
+  font-size: 13px;
+  color: #aaa;
+}
+
+
+/* BTN */
+
+.blog-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #4da3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.blog-btn:hover {
+  background: rgba(150, 160, 255, 0.6);
+  transform: scale(1.1);
+}
+
+
+/* TAG */
+
+.blog-img-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #4da3ff;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  font-weight: 600;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+/* 1400+ */
+
+@media (min-width: 1400px) {
+  .blog-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* Laptop */
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* Tablet */
+
+@media (min-width: 600px) and (max-width: 1023px) {
+
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .blog-heading {
+    font-size: 32px;
+  }
+
+  .blog-wrapper {
+    padding: 30px 16px;
+  }
+
+}
+
+
+/* Mobile */
+
+@media (min-width: 480px) and (max-width: 599px) {
+
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .blog-heading {
+    font-size: 28px;
+  }
+
+  .blog-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .blog-title {
+    font-size: 15px;
+  }
+
+}
+
+
+/* Small Mobile */
+
+@media (max-width: 479px) {
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .blog-heading {
+    font-size: 24px;
+  }
+
+  .blog-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .blog-title {
+    font-size: 16px;
+  }
+
+  .blog-footer {
+    height: auto;
+    margin-top: 12px;
+  }
+
+  .blog-wrapper {
+    padding: 20px 10px;
+  }
+
+  .container-fluid-blog {
+    padding: 0 10px;
+  }
+
+}
+
+/* Blog css new 27 march  */
+
+/* ============================================================
+   Blog.css ADDITIONS — paste these into your existing Blog.css
+   (ya replace karo agar fresh chahiye)
+   ============================================================ */
+
+/* TITLE — max 2 lines, no scroll */
+.blog-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.35;
+  /* height = 2 lines ki height; adjust if font-size different hai */
+  max-height: calc(1.35em * 2);
+}
+
+/* TITLE LINK — remove underline */
+.blog-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+.blog-title-link:hover .blog-title {
+  opacity: 0.85;
+}
+
+/* DESCRIPTION — max 3 lines, no scroll, plain text */
+.blog-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.55;
+  max-height: calc(1.55em * 3);
+
+  /* Remove old scroll wrapper styles if any */
+  overflow-y: unset;
+  scrollbar-width: unset;
+}
+
+/* Remove scroll wrapper if still present */
+.blog-desc-wrapper {
+  overflow: visible;
+  position: static;
+}
+.blog-scrollbar,
+.blog-scrollbar-thumb {
+  display: none !important;
+}
+
+/* IMAGE LINK — block so image fills properly */
+.blog-img-link {
+  display: block;
+  text-decoration: none;
+}
+
+/* ARROW BUTTON hover effect */
+.blog-btn {
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+.blog-btn:hover {
+  transform: scale(1.08);
+}

@@ -1,0 +1,187 @@
+.consult-container {
+  position: fixed;
+  bottom: 150px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 15px;
+}
+
+/* button */
+
+.consult-btn {
+  background-color: #218D51;
+  width: 46px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.consult-icon {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+/* pill */
+
+.consult-pill-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.consult-pill {
+  background: white;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 7px 9px;
+  /* font-size: 14px; */
+  font-size: 10px;
+  box-shadow: 3px 3px #4F90A6;
+  font-weight: 600;
+  color: black;
+}
+
+.consult-close {
+  background: black;
+  color: white;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+
+/* ===== TABLET (768px - 1024px) ===== */
+@media (max-width: 1024px) {
+  .consult-container {
+    bottom: 137px;
+    right: 20px;
+    margin-right: 10px;
+  }
+
+  .consult-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .consult-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .consult-pill {
+    font-size: 13px;
+    padding: 9px 11px;
+  }
+}
+
+/* ===== SMALL TABLET / LARGE MOBILE (576px - 767px) ===== */
+@media (max-width: 767px) {
+  .consult-container {
+    bottom: 120px;
+    right: 15px;
+    margin-right: 8px;
+    gap: 8px;
+  }
+
+  .consult-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .consult-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .consult-pill {
+    font-size: 12px;
+    padding: 8px 10px;
+    box-shadow: 3px 3px #4F90A6;
+  }
+
+  .consult-close {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+  }
+}
+
+/* ===== MOBILE (max 575px) ===== */
+@media (max-width: 575px) {
+  .consult-container {
+    bottom: 100px;
+    right: 12px;
+    margin-right: 5px;
+    gap: 6px;
+  }
+
+  .consult-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .consult-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .consult-pill {
+    font-size: 11px;
+    padding: 7px 9px;
+    border-radius: 20px;
+    box-shadow: 2px 2px #4F90A6;
+    margin-bottom: -5px;
+    
+  }
+
+  .consult-close {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+  }
+}
+
+/* ===== VERY SMALL MOBILE (max 360px) ===== */
+@media (max-width: 360px) {
+  .consult-container {
+    bottom: 85px;
+    right: 8px;
+    margin-right: 0;
+  }
+
+  .consult-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .consult-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .consult-pill {
+    font-size: 10px;
+    padding: 6px 8px;
+    margin-bottom: 8px;
+  }
+
+  .consult-close {
+    width: 20px;
+    height: 20px;
+  }
+}

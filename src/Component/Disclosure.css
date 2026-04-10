@@ -1,0 +1,102 @@
+
+
+.disclosure-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/img/Hero-bg2.svg"); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+ color: #bcbcbc;
+ margin-top: 80px;
+}
+
+.disclosure-content {
+  max-width: 900px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(30, 60, 120, 0.35), rgba(10, 20, 40, 0.55));
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.disclosure-content h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #4F90A6;;
+}
+
+.disclosure-content p,
+.disclosure-content li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.disclosure-content ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.disclosure-content strong {
+  color: #4F90A6;;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+@media (max-width: 1024px) {
+  .disclosure-content {
+    padding: 35px;
+  }
+
+  .disclosure-content h1 {
+    font-size: 32px;
+  }
+
+  .disclosure-content p,
+  .disclosure-content li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .disclosure-page {
+    padding: 40px 15px;
+  }
+
+  .disclosure-content {
+    padding: 30px;
+  }
+
+  .disclosure-content h1 {
+    font-size: 28px;
+  }
+
+  .disclosure-content p,
+  .disclosure-content li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .disclosure-page {
+    padding: 30px 10px;
+  }
+
+  .disclosure-content {
+    padding: 25px;
+  }
+
+  .disclosure-content h1 {
+    font-size: 24px;
+  }
+
+  .disclosure-content p,
+  .disclosure-content li {
+    font-size: 13px;
+  }
+}

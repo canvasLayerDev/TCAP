@@ -1,0 +1,189 @@
+/* ===== Overlay ===== */
+
+/* .modal-overlay {
+    position: fixed;
+    top: 150px;
+    left: 500px;
+    right: 0px;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    z-index: 999999;
+    padding: 10px; 
+    padding-right: 50px !important;
+} */
+
+
+/* ===== Wrapper ===== */
+
+.modal-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+/* ===== Form ===== */
+
+.consult-form {
+
+    width: 80%;
+    max-width: 380px;
+    /* background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px); */
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #2d7cff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* color: white; */
+    background: white;
+color: black;
+    
+}
+
+
+/* heading */
+
+.consult-form h3 {
+    text-align: center;
+}
+
+
+/* input */
+
+/* .consult-form input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #2d7cff;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+} */
+ .consult-form input {
+    width: 100%;
+    background: #f1f1f1;
+    border: 1px solid #2d7cff;
+    padding: 12px;
+    border-radius: 10px;
+    color: black;
+    outline: none;
+}
+
+/* .consult-form input::placeholder {
+    color: #ccc;
+} */
+ .consult-form input::placeholder {
+    color: black;
+}
+
+
+/* button */
+
+.consult-form button {
+    background: #2d7cff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* header */
+
+.form-header {
+  display: flex;
+  align-items: center;
+}
+
+.form-close {
+  margin-left: auto;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-close:hover {
+  background: #2d7cff;
+  color: white;
+}
+
+
+
+/* ========================= */
+/* ✅ RESPONSIVE PART */
+/* ========================= */
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+  .consult-form {
+    max-width: 100%;
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .consult-form input {
+    padding: 10px;
+  }
+
+  .consult-form button {
+    padding: 10px;
+  }
+
+}
+
+/* Tablet */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .consult-form {
+    max-width: 420px;
+  }
+
+}
+
+
+/* Laptop */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+  .consult-form {
+    max-width: 400px;
+  }
+
+}
+
+
+/* Large Screen */
+
+@media (min-width: 1201px) {
+
+  .consult-form {
+    max-width: 420px;
+  }
+
+}

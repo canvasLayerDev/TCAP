@@ -1,0 +1,174 @@
+/* ===================== FOOTER ===================== */
+.footer {
+  background: #000;
+  color: #aaa;
+  padding: 70px 80px 30px;
+}
+
+/* ===================== MAIN CONTAINER ===================== */
+.footer-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 70px;
+}
+
+/* ===================== BRAND BLOCK ===================== */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* LOGO FIX */
+.footer-logo {
+  width: 116px;
+  height: 57PX;
+  object-fit: contain;
+  margin-left: 2px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+
+/* BRAND TEXT */
+.brand-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.brand-tagline {
+  font-size: 14px;
+  color: #aaa;
+  margin: 0;
+}
+
+/* ===================== COMMON COLUMN ===================== */
+.footer-col {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.footer-col h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+/* LINKS */
+.footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #4F90A6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+/* ===================== FOOTER BOTTOM ===================== */
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+/* ===================== LAPTOP (992px – 1199px) ===================== */
+@media (max-width: 1199px) {
+  .footer {
+    padding: 60px 60px 30px;
+  }
+
+  .footer-container {
+    gap: 50px;
+  }
+
+  .footer-logo {
+    width: 160px;
+  }
+}
+
+/* ===================== TABLET (768px – 991px) ===================== */
+@media (max-width: 991px) {
+  .footer {
+    padding: 50px 40px 30px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-logo {
+    width: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .footer {
+    padding: 35px 20px 25px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 👈 2 columns */
+    gap: 20px;
+  }
+
+ 
+  .footer-col.brand {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .footer-logo {
+    width: 140px;
+    margin: 0 auto;
+  margin-left: -19px
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .brand-tagline {
+    font-size: 12px;
+  }
+
+  .footer-col h3 {
+    font-size: 16px;
+  }
+
+  .footer-col ul li {
+    font-size: 14px;
+  }
+}
+
+/* ===================== SMALL MOBILE (max 359px) ===================== */
+@media (max-width: 359px) {
+  .footer-logo {
+    width: 125px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .brand-tagline {
+    font-size: 11px;
+  }
+}

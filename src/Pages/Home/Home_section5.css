@@ -1,0 +1,368 @@
+/* ================= GLOBAL ================= */
+:root {
+  --green: #4da3ff;
+  --text: #ffffff;
+  --muted: #bdbdbd;
+}
+
+
+
+body {
+  background-color: #0D0D0D;
+  color: var(--text);
+}
+
+/* ================= SECTION ================= */
+.about-services {
+  padding: 50px 0;
+  color: var(--text);
+}
+
+.about-container-fluid {
+  /* width: 100%; */
+  max-width: 1508px;
+  margin: 0 auto;
+  padding: 0 61px;
+}
+
+/* ================= HEADER ================= */
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+  gap: 20px;
+  /* consistent spacing */
+}
+
+.about-badge {
+  color: var(--green);
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.about-title {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.15;
+  max-width: 780px;
+  margin-top: 20px;
+}
+
+.about-title span {
+  color: var(--green);
+}
+
+.about-description {
+  max-width: 420px;
+  margin-top: 19px;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.about-action {
+  margin-left: 9px;
+  /* typo fixed */
+}
+
+/* ================= TEAM ================= */
+.about-team {
+  padding: 0 3px;
+}
+
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.about-team-card {
+  background: #111;
+  border-radius: 24px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.about-team-card:hover,
+.about-team-card.active {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.about-team-card img {
+  width: 100%;
+  height: 341px;
+  object-fit: cover;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+.about-team-info {
+  padding: 20px;
+}
+
+.about-team-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.about-team-info p {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ================= LAPTOP (992px - 1199px) ================= */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .about-container {
+    padding: 0 30px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .about-team-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .about-team-card img {
+    height: 439px;
+  }
+
+  .about-team-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-team-info h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .about-team-info p {
+    font-size: 14px;
+  }
+}
+
+/* ================= TABLET (768px - 991px) ================= */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .about-container {
+    padding: 0 28px;
+  }
+
+  .about-header {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .about-title {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-top: 12px;
+  }
+
+  .about-description {
+    font-size: 15.5px;
+    margin-top: 0;
+  }
+
+  .about-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+
+  .about-team img {
+    height: 370px;
+  }
+
+  .about-team-card {
+    height: 460px;
+  }
+}
+
+
+/* ================= MOBILE LARGE (390px - 767px) ================= */
+@media (min-width: 390px) and (max-width: 767px) {
+
+  .about-container-fluid {
+    padding: 0 20px;
+  }
+
+  .about-header {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 50px;
+
+  }
+
+  .about-title {
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .about-description {
+    font-size: 15px;
+    margin-left: 1px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-action {
+    margin-left: 0px;
+    margin-top: 1px;
+  }
+  .about-team-card {
+   height: 430px;
+    width: 300px;
+    /* margin-left: -1px; */
+    margin-left: 21px;
+  }
+
+  .about-team-card img {
+    height: 317px;
+    width: 300px;
+  }
+}
+
+
+/* ================= MOBILE MEDIUM (360px - 389px) ================= */
+@media (min-width: 360px) and (max-width: 389px) {
+
+  .about-container-fluid {
+    padding: 0 18px;
+  }
+
+
+  .about-header {
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 45px;
+  }
+
+  .about-title {
+    font-size: 25px;
+    line-height: 1.40;
+    margin-bottom: 1px;
+  }
+
+   .about-action {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .about-description {
+    font-size: 15px;
+
+  }
+
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+   .about-team-card {
+   height: 316px;
+    width: 300px;
+    margin-left: 11px !important;
+  }
+  .about-team-card img {
+    height: 330px;
+  }
+   /* 👇 NEW: h3 + p ko ek row me lane ke liye */
+  .about-team-card h3,
+  .about-team-card p {
+    margin: 0;
+  }
+
+  .about-team-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .about-team-card p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  /* 🔥 MAGIC LINE */
+  .about-team-card h3 + p {
+    margin-left: 8px;
+  }
+
+  /* text container ko flex bana do */
+  .about-team-card {
+    position: relative;
+    height: 99% !important;
+  }
+
+  .about-team-card h3,
+  .about-team-card p {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+
+/* ================= MOBILE SMALL (320px - 359px) ================= */
+@media (min-width: 320px) and (max-width: 359px) {
+
+  .about-container-fluid {
+    padding: 0 16px;
+  }
+
+  .about-header {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .about-badge {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .about-title {
+    font-size: 28px;
+    line-height: 1.25;
+    max-width: 100%;
+  }
+
+  .about-description {
+    font-size: 14px;
+    max-width: 100%;
+    margin-left: 1px;
+  }
+
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+     .about-team-card {
+   height: 424px;
+    /* width: 300px; */
+    /* margin-left: 16px; */
+  }
+  .about-team-card img {
+    height: 330px;
+  }
+
+}

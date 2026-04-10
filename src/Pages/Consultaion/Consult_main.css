@@ -1,0 +1,142 @@
+/* ====================== */
+/* MODAL OVERLAY */
+/* ====================== */
+
+.modal-overlay {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: flex-end;   
+    align-items: center;
+
+  z-index: 999999;
+
+  padding-right: 80px;   /* right gap desktop */
+  padding-left: 10px;
+
+}
+
+
+/* ====================== */
+/* MODAL CONTENT */
+/* ====================== */
+
+.modal-content {
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 400px;
+
+}
+
+
+/* ====================== */
+/* CLOSE BUTTON */
+/* ====================== */
+
+.close-btn {
+
+  position: absolute;
+
+  top: -15px;
+  right: -15px;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: red;
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ====================== */
+/* MOBILE */
+/* ====================== */
+
+@media (max-width: 480px) {
+
+  .modal-overlay {
+
+    justify-content: center;   /* ✅ center mobile */
+    padding-right: 0;
+    padding-left: 0;
+
+  }
+
+  .modal-content {
+    max-width: 95%;
+  }
+
+}
+
+
+/* ====================== */
+/* TABLET */
+/* ====================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .modal-overlay {
+
+    justify-content: center;   /* ✅ center tablet */
+    padding-right: 0;
+
+  }
+
+  .modal-content {
+    max-width: 420px;
+  }
+
+}
+
+
+/* ====================== */
+/* LAPTOP */
+/* ====================== */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+  .modal-content {
+    max-width: 400px;
+  }
+
+}
+
+
+/* ====================== */
+/* LARGE */
+/* ====================== */
+
+@media (min-width: 1201px) {
+
+  .modal-content {
+    max-width: 450px;
+  }
+
+}
