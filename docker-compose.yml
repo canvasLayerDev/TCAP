@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  main-frontend:
+    build:
+      context: ./TCAP Main
+      dockerfile: Dockerfile
+    container_name: tcap-main-frontend-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - './TCAP Main:/app'
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+
+  admin-frontend:
+    build:
+      context: ./TCAP Admin
+      dockerfile: Dockerfile
+    container_name: tcap-admin-frontend-dev
+    ports:
+      - "5174:5173"
+    volumes:
+      - './TCAP Admin:/app'
+      - ./TCAP\ Admin/Backend:/app/Backend # So it doesn't conflict or we isolate it
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./TCAP Admin/Backend
+      dockerfile: Dockerfile
+    container_name: tcap-backend
+    ports:
+      - "8080:80"
+    volumes:
+      - './TCAP Admin/Backend:/var/www/html'
+    environment:
+      - DB_HOST=db
+      - DB_USER=u555641943_tcap
+      - DB_PASS=|n1fPt@jF
+      - DB_NAME=u555641943_tcap
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: tcap-mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=u555641943_tcap
+      - MYSQL_USER=u555641943_tcap
+      - MYSQL_PASSWORD=|n1fPt@jF
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - tcap_db_data:/var/lib/mysql
+      # Map the migrations script to auto-execute on startup
+      - ./database/migration_001_setup_existing.sql:/docker-entrypoint-initdb.d/1_migration_001.sql
+      - ./database/migration_002_new_tables.sql:/docker-entrypoint-initdb.d/2_migration_002.sql
+    restart: unless-stopped
+
+volumes:
+  tcap_db_data:
