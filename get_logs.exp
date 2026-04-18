@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+set timeout 15
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST "tail -50 ~/domains/tcapitalwealth.com/logs/error.log 2>/dev/null || tail -50 ~/logs/error.log 2>/dev/null || find ~/domains/tcapitalwealth.com/public_html/tcap -name '*.log' 2>/dev/null | head -5"
+expect "password:"
+send "$PASSWORD\r"
+expect eof

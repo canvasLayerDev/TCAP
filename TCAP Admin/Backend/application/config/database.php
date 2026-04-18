@@ -13,7 +13,7 @@ $db['default'] = array(
 
 //new db
 	'username' => getenv('DB_USER') ?: 'u555641943_tcap',
-	'password' => getenv('DB_PASS') ?: '|n1fPt@jF',
+	'password' => getenv('DB_PASS') ?: 'Kw4kN#uqnW.#KJw',
 	'database' => getenv('DB_NAME') ?: 'u555641943_tcap',
 
 

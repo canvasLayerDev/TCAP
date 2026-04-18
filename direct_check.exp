@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+set timeout 15
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST {curl -s https://tcapitalwealth.com/tcap/index.php/Welcome/list_blog -X POST | python3 -c "import sys,json; d=json.load(sys.stdin); [print(b['blog_id'], b.get('name','')[:50], b.get('date','')) for b in d.get('data',[])]"}
+expect "password:"
+send "$PASSWORD\r"
+expect eof

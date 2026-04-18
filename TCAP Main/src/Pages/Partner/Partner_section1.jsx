@@ -42,8 +42,9 @@ const Partner_section1 = () => {
     setLoading(true);
 
     try {
+      const baseUrl = import.meta.env.VITE_API_URL || "https://tcapitalwealth.com/tcap";
       const res = await axios.post(
-        "https://tcapitalwealth.com/tcap/index.php/Welcome/partners_mail",
+        `${baseUrl}/index.php/Welcome/partners_mail`,
         formData
       );
 

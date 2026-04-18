@@ -1,0 +1,19 @@
+#!/usr/bin/expect -f
+set timeout 30
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST /bin/bash
+expect "password:"
+send "$PASSWORD\r"
+expect "$ "
+
+send "TOKEN=\$(curl -s -X POST https://tcapitalwealth.com/tcap/index.php/Welcome/login -H 'Content-Type: application/json' -d '{\"username\":\"admin\",\"password\":\"tcap@admin2024\"}' | grep -o '\"token\":\"[^\"]*\"' | cut -d'\"' -f4)\r"
+expect "$ "
+
+send {curl -s -X POST https://tcapitalwealth.com/tcap/index.php/Welcome/add_blog -H "Authorization: Bearer $TOKEN" -F 'name=Retirement Planning with Smart Investment: Build a Secure Financial Future' -F 'slug=retirement-planning-smart-investment' -F 'meta_description=Learn how retirement planning with smart investments can help you build long-term wealth, generate passive income, and secure your financial future.' -F 'focus_keyword=Retirement Planning with Smart Investment' -F 'date=2026-04-18' -F 'description=<p>Retirement planning with smart investment is essential to ensure financial independence. A structured investment strategy helps build a strong retirement corpus and generate passive income.</p>' -F 'details=<h2>Why Retirement Planning is Important</h2><p>Retirement planning ensures you maintain your lifestyle even after your regular income stops.</p><h3>Key Benefits</h3><ul><li>Financial independence after retirement</li><li>Protection against inflation</li><li>Healthcare expense management</li><li>Long-term wealth creation</li></ul><h2>Smart Investment Options</h2><h3>1. Equity Mutual Funds</h3><p>Offer higher growth potential and compounding returns for long-term retirement corpus building.</p><h3>2. Fixed Income Investments</h3><p>Bonds and FDs provide stability and capital preservation.</p><h3>3. Retirement Pension Plans</h3><p>Generate regular income after retirement.</p><h2>Step-by-Step Strategy</h2><ol><li>Define Goals</li><li>Calculate Corpus</li><li>Diversify Portfolio</li><li>Invest Consistently via SIPs</li></ol><h2>TCapital Wealth</h2><p>TCapital Wealth provides personalized retirement strategies to help you achieve financial independence after retirement. Start planning today for a stress-free retirement tomorrow.</p>'}
+expect "$ "
+send "exit\r"
+expect eof

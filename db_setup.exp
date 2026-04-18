@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+set timeout 10
+
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST "mysql -u u555641943_tcap -p'Kw4kN#uqnW.#KJw' u555641943_tcap -e \"CREATE TABLE IF NOT EXISTS tbl_admin (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password_hash VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP); INSERT IGNORE INTO tbl_admin (username, password_hash) VALUES ('admin', '\\\$2y\\\$10\\\$ECcBE67r/T9dThPR4heApuxqflJYTBovesYt05B62/nCJo7Xme9aG'); SHOW TABLES;\""
+expect "password:"
+send "$PASSWORD\r"
+expect eof

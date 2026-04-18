@@ -1,0 +1,18 @@
+#!/usr/bin/expect -f
+set timeout 30
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+# Upload the script
+spawn scp -P $PORT publish_blog.sh $USER@$HOST:/tmp/publish_blog.sh
+expect "password:"
+send "$PASSWORD\r"
+expect eof
+
+# Run the script on the server
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST "bash /tmp/publish_blog.sh"
+expect "password:"
+send "$PASSWORD\r"
+expect eof

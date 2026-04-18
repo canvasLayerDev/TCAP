@@ -13,6 +13,7 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+      - VITE_API_URL=http://localhost:8080
     restart: unless-stopped
 
   admin-frontend:
@@ -28,6 +29,7 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+      - VITE_API_URL=http://localhost:8080
     restart: unless-stopped
 
   backend:
@@ -44,6 +46,7 @@ services:
       - DB_USER=u555641943_tcap
       - DB_PASS=|n1fPt@jF
       - DB_NAME=u555641943_tcap
+      - JWT_SECRET=tcap_secure_admin_2024
     depends_on:
       - db
     restart: unless-stopped

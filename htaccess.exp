@@ -1,0 +1,31 @@
+#!/usr/bin/expect -f
+set timeout 10
+
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST {
+    cat << 'HTACCESS' > ~/domains/tcapitalwealth.com/public_html/.htaccess
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
+HTACCESS
+
+    cat << 'HTACCESS2' > ~/domains/tcapitalwealth.com/public_html/admin/.htaccess
+Options -MultiViews
+RewriteEngine On
+RewriteBase /admin/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
+HTACCESS2
+}
+
+expect "password:"
+send "$PASSWORD\r"
+expect eof
+

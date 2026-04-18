@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+set timeout 20
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+spawn scp -P $PORT finalize_blog_seo.php $USER@$HOST:/tmp/finalize_blog_seo.php
+expect "password:"
+send "$PASSWORD\r"
+expect eof
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST "php /tmp/finalize_blog_seo.php"
+expect "password:"
+send "$PASSWORD\r"
+expect eof

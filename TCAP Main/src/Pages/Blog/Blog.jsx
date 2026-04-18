@@ -1,504 +1,25 @@
-// // import React, { useEffect, useState } from "react";
-// // import axios from "axios";
-// // import { Link } from "react-router-dom";
-// // import { motion } from "framer-motion";
-// // import styles from "./Blog.module.css";
-
-
-// // const BASE_URL = "https://tcapitalwealth.com/tcap";
-
-// // const containerVariants = {
-// //   hidden: {},
-// //   show: {
-// //     transition: { staggerChildren: 0.1 },
-// //   },
-// // };
-
-// // const cardVariants = {
-// //   hidden: { opacity: 0, y: 40 },
-// //   show: {
-// //     opacity: 1,
-// //     y: 0,
-// //     transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] },
-// //   },
-// // };
-
-// // const headingVariants = {
-// //   hidden: { opacity: 0, y: -20 },
-// //   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-// // };
-
-// // function Blog() {
-// //   const [blogs, setBlogs] = useState([]);
-
-// //   useEffect(() => {
-// //     fetchBlogs();
-// //   }, []);
-
-// //   /* ================= FETCH BLOG ================= */
-// //   const fetchBlogs = async () => {
-// //     try {
-// //       const res = await axios.post(
-// //         `${BASE_URL}/index.php/Welcome/list_blog`
-// //       );
-
-// //       if (res.data.status === "true") {
-// //         setBlogs(res.data.data);
-// //       }
-// //     } catch (error) {
-// //       console.log(error);
-// //     }
-// //   };
-
-// //   /* ================= DATE FORMAT ================= */
-// //   const formatDate = (dateString) => {
-// //     const date = new Date(dateString);
-
-// //     const day = date.getDate();
-// //     const month = date.toLocaleString("default", { month: "short" });
-// //     const year = date.getFullYear();
-
-// //     return `${day} ${month} ${year}`;
-// //   };
-
-// //   return (
-// //     <div className={styles.wrapper}>
-
-// //       {/* HEADER */}
-// //       <motion.div
-// //         className={styles.header}
-// //         variants={headingVariants}
-// //         initial="hidden"
-// //         animate="show"
-// //       >
-// //         <div className={styles.eyebrow}>Editorial</div>
-// //         <h2 className={styles.heading}>Blogs</h2>
-// //       </motion.div>
-
-// //       {/* GRID */}
-// //       <motion.div
-// //         className={styles.grid}
-// //         variants={containerVariants}
-// //         initial="hidden"
-// //         animate="show"
-// //       >
-// //         {blogs.map((blog, index) => (
-// //           <motion.div
-// //             key={blog.blog_id}
-// //             className={styles.card}
-// //             variants={cardVariants}
-// //           >
-// //             {/* IMAGE */}
-// //             <div className={styles.imgWrapper}>
-// //               <img
-// //                 src={`${BASE_URL}/${blog.image}`}
-// //                 alt={blog.name}
-// //                 className={styles.cardImg}
-// //               />
-// //               <div className={styles.imgTag}>Article</div>
-// //             </div>
-
-// //             {/* BODY */}
-// //             <div className={styles.cardBody}>
-// //               <span className={styles.cardIndex}>
-// //                 {String(index + 1).padStart(2, "0")}
-// //               </span>
-
-// //               <h5 className={styles.cardTitle}>
-// //                 {blog.name}
-// //               </h5>
-
-// //               <p className={styles.cardDesc}>
-// //                 {blog.description}
-// //               </p>
-
-// //               <div className={styles.cardFooter}>
-// //                 <span className={styles.cardDate}>
-// //                   {formatDate(blog.date)}
-// //                 </span>
-
-// //                 <Link
-// //                   to={`/blog`}
-// //                   className={styles.cardBtn}
-// //                 >
-// //                   <svg viewBox="0 0 24 24">
-// //                     <line x1="5" y1="12" x2="19" y2="12" />
-// //                     <polyline points="12 5 19 12 12 19" />
-// //                   </svg>
-// //                 </Link>
-// //               </div>
-// //             </div>
-// //           </motion.div>
-// //         ))}
-// //       </motion.div>
-
-      
-// //     </div>
-// //   );
-// // }
-
-// // export default Blog;
-
-
-
-
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
-// import { motion } from "framer-motion";
-// import "./Blog.css";
-
-// const BASE_URL = "https://tcapitalwealth.com/tcap";
-
-// const containerVariants = {
-//   hidden: {},
-//   show: {
-//     transition: { staggerChildren: 0.1 },
-//   },
-// };
-
-// const cardVariants = {
-//   hidden: { opacity: 0, y: 40 },
-//   show: {
-//     opacity: 1,
-//     y: 0,
-//     transition: { duration: 0.55 },
-//   },
-// };
-
-// const headingVariants = {
-//   hidden: { opacity: 0, y: -20 },
-//   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-// };
-
-// function Blog() {
-//   const [blogs, setBlogs] = useState([]);
-
-//   useEffect(() => {
-//     fetchBlogs();
-//   }, []);
-
-//   const fetchBlogs = async () => {
-//     try {
-//       const res = await axios.post(
-//         `${BASE_URL}/index.php/Welcome/list_blog`
-//       );
-
-//       if (res.data.status === "true") {
-//         setBlogs(res.data.data);
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-
-//   const formatDate = (dateString) => {
-//     const date = new Date(dateString);
-
-//     const day = date.getDate();
-//     const month = date.toLocaleString("default", { month: "short" });
-//     const year = date.getFullYear();
-
-//     return `${day} ${month} ${year}`;
-//   };
-
-//   return (
-//     <div className="blog-wrapper"
-//      style={{
-//           backgroundImage: 'url("/img/Hero-bg2.svg")',
-//           backgroundSize: "cover",
-//           backgroundRepeat: "no-repeat",
-//           backgroundPosition: "center",
-//           minHeight: "520px",
-//           alignItems: "center",
-//           color: "#fff",
-//         }}>
-
-//       {/* HEADER */}
-//       <motion.div
-//         className="blog-header"
-//         variants={headingVariants}
-//         initial="hidden"
-//         animate="show"
-//       >
-//       </motion.div>
-
-//       {/* GRID */}
-//       <motion.div
-//         className="container-fluid-blog  blog-grid"
-//         variants={containerVariants}
-//         initial="hidden"
-//         animate="show"
-//       >
-//         {blogs.map((blog, index) => (
-//           <motion.div
-//             key={blog.blog_id}
-//             className="blog-card"
-//             variants={cardVariants}
-//           >
-
-//             {/* IMAGE */}
-//             <div className="blog-img-wrapper">
-//               <img
-//                 src={`${BASE_URL}/${blog.image}`}
-//                 alt={blog.name}
-//                 className="blog-img"
-//               />
-//               <div className="blog-img-tag">Article</div>
-//             </div>
-
-//             {/* BODY */}
-//             <div className="blog-body">
-
-//               <span className="blog-index">
-//                 {String(index + 1).padStart(2, "0")}
-//               </span>
-
-//               <h5 className="blog-title">
-//                 {blog.name}
-//               </h5>
-
-//               <p className="blog-desc">
-//                 {blog.description}
-//               </p>
-
-//               <div className="blog-footer">
-
-//                 <span className="blog-date">
-//                   {formatDate(blog.date)}
-//                 </span>
-
-//                 <Link
-//                   to="/blog"
-//                   className="blog-btn"
-//                 >
-//                   →
-//                 </Link>
-
-//               </div>
-
-//             </div>
-
-//           </motion.div>
-//         ))}
-//       </motion.div>
-
-//     </div>
-//   );
-// }
-
-// export default Blog;
-
-
-
-
-
-
-
-
-
-
-// import React, { useEffect, useState, useRef } from "react";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
-// import { motion } from "framer-motion";
-// import "./Blog.css";
-
-// const BASE_URL = "https://tcapitalwealth.com/tcap";
-
-// const containerVariants = {
-//   hidden: {},
-//   show: { transition: { staggerChildren: 0.1 } },
-// };
-
-// const cardVariants = {
-//   hidden: { opacity: 0, y: 40 },
-//   show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
-// };
-
-// const headingVariants = {
-//   hidden: { opacity: 0, y: -20 },
-//   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-// };
-
-// /* ✅ Custom Scrollbar Component */
-// function ScrollableDesc({ text }) {
-//   const descRef = useRef(null);
-//   const thumbRef = useRef(null);
-
-//   useEffect(() => {
-//     const desc = descRef.current;
-//     const thumb = thumbRef.current;
-//     if (!desc || !thumb) return;
-
-//     function updateThumb() {
-//       const scrollHeight = desc.scrollHeight;
-//       const clientHeight = desc.clientHeight;
-
-//       if (scrollHeight <= clientHeight) {
-//         thumb.style.display = "none";
-//         return;
-//       }
-
-//       thumb.style.display = "block";
-
-//       const thumbHeight = Math.max(
-//         (clientHeight / scrollHeight) * clientHeight,
-//         16
-//       );
-//       const maxScrollTop = scrollHeight - clientHeight;
-//       const maxThumbTop = clientHeight - thumbHeight;
-//       const thumbTop = (desc.scrollTop / maxScrollTop) * maxThumbTop;
-
-//       thumb.style.height = thumbHeight + "px";
-//       thumb.style.top = thumbTop + "px";
-//     }
-
-//     updateThumb();
-//     desc.addEventListener("scroll", updateThumb);
-//     window.addEventListener("resize", updateThumb);
-
-//     return () => {
-//       desc.removeEventListener("scroll", updateThumb);
-//       window.removeEventListener("resize", updateThumb);
-//     };
-//   }, []);
-
-//   return (
-//     <div className="blog-desc-wrapper">
-//       <p className="blog-desc" ref={descRef}>
-//         {text}
-//       </p>
-//       <div className="blog-scrollbar">
-//         <div className="blog-scrollbar-thumb" ref={thumbRef}></div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// function Blog() {
-//   const [blogs, setBlogs] = useState([]);
-
-//   useEffect(() => {
-//     fetchBlogs();
-//   }, []);
-
-//   const fetchBlogs = async () => {
-//     try {
-//       const res = await axios.post(
-//         `${BASE_URL}/index.php/Welcome/list_blog`
-//       );
-//       if (res.data.status === "true") {
-//         setBlogs(res.data.data);
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-
-//   const formatDate = (dateString) => {
-//     const date = new Date(dateString);
-//     const day = date.getDate();
-//     const month = date.toLocaleString("default", { month: "short" });
-//     const year = date.getFullYear();
-//     return `${day} ${month} ${year}`;
-//   };
-
-//   return (
-//     <div
-//       className="blog-wrapper"
-//       style={{
-//         backgroundImage: 'url("/img/Hero-bg2.svg")',
-//         backgroundSize: "cover",
-//         backgroundRepeat: "no-repeat",
-//         backgroundPosition: "center",
-//         minHeight: "520px",
-//         alignItems: "center",
-//         color: "#fff",
-//       }}
-//     >
-//       {/* HEADER */}
-//       <motion.div
-//         className="blog-header"
-//         variants={headingVariants}
-//         initial="hidden"
-//         animate="show"
-//       />
-
-//       {/* GRID */}
-//       <motion.div
-//         className="container-fluid-blog blog-grid"
-//         variants={containerVariants}
-//         initial="hidden"
-//         animate="show"
-//       >
-//         {blogs.map((blog, index) => (
-//           <motion.div
-//             key={blog.blog_id}
-//             className="blog-card"
-//             variants={cardVariants}
-//           >
-//             {/* IMAGE */}
-//             <div className="blog-img-wrapper">
-//               <img
-//                 src={`${BASE_URL}/${blog.image}`}
-//                 alt={blog.name}
-//                 className="blog-img"
-//               />
-//               <div className="blog-img-tag">Article</div>
-//             </div>
-
-//             {/* BODY */}
-//             <div className="blog-body">
-//               <span className="blog-index">
-//                 {String(index + 1).padStart(2, "0")}
-//               </span>
-
-//               <h5 className="blog-title">{blog.name}</h5>
-
-//               {/* ✅ Custom scrollbar wala component */}
-//               <ScrollableDesc text={blog.description} />
-
-//               <div className="blog-footer">
-//                 <span className="blog-date">{formatDate(blog.date)}</span>
-//                 <Link to="/blog" className="blog-btn">→</Link>
-//               </div>
-//             </div>
-//           </motion.div>
-//         ))}
-//       </motion.div>
-//     </div>
-//   );
-// }
-
-// export default Blog;
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import DOMPurify from "dompurify";
 import "./Blog.css";
 
-const BASE_URL = "https://tcapitalwealth.com/tcap";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://tcapitalwealth.com/tcap";
 
 const containerVariants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
+  show: { transition: { staggerChildren: 0.12 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
-};
-
-const headingVariants = {
-  hidden: { opacity: 0, y: -20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
 
 function Blog() {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchBlogs();
@@ -507,103 +28,157 @@ function Blog() {
   const fetchBlogs = async () => {
     try {
       const res = await axios.post(`${BASE_URL}/index.php/Welcome/list_blog`);
-      if (res.data.status === "true") {
-        setBlogs(res.data.data);
-      }
-    } catch (error) {
-      console.log(error);
+      if (res.data.status === "true") setBlogs(res.data.data);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const day = date.getDate();
-    const month = date.toLocaleString("default", { month: "short" });
-    const year = date.getFullYear();
-    return `${day} ${month} ${year}`;
+  const formatDate = (d) => {
+    if (!d) return "";
+    const date = new Date(d);
+    return date.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
   };
 
-  /* Strip HTML tags from CKEditor content */
-  const stripHtml = (html) => {
-    const div = document.createElement("div");
-    div.innerHTML = html;
-    return div.textContent || div.innerText || "";
-  };
+  const stripHtml = (html) => DOMPurify.sanitize(html, { ALLOWED_TAGS: [] });
+
+  /* Split hero (first) + rest */
+  const [hero, ...rest] = blogs;
 
   return (
-    <div
-      className="blog-wrapper"
-      style={{
-        backgroundImage: 'url("/img/Hero-bg2.svg")',
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        minHeight: "520px",
-        alignItems: "center",
-        color: "#fff",
-      }}
-    >
-      {/* HEADER */}
-      <motion.div
-        className="blog-header"
-        variants={headingVariants}
-        initial="hidden"
-        animate="show"
-      />
-
-      {/* GRID */}
-      <motion.div
-        className="container-fluid-blog blog-grid"
-        variants={containerVariants}
-        initial="hidden"
-        animate="show"
-      >
-        {blogs.map((blog, index) => (
-          <motion.div
-            key={blog.blog_id}
-            className="blog-card"
-            variants={cardVariants}
+    <div className="bl-page">
+      {/* ── HERO BANNER ── */}
+      <section className="bl-banner">
+        <div className="bl-banner-inner">
+          <motion.span
+            className="bl-banner-label"
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            {/* IMAGE — clickable */}
-            <Link to={`/blog-detail/${blog.blog_id}`} className="blog-img-link">
-              <div className="blog-img-wrapper">
-                <img
-                  src={`${BASE_URL}/${blog.image}`}
-                  alt={blog.name}
-                  className="blog-img"
-                />
-                <div className="blog-img-tag">Article</div>
-              </div>
-            </Link>
+            TCapital Wealth · Insights
+          </motion.span>
+          <motion.h1
+            className="bl-banner-title"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.1 }}
+          >
+            Financial Intelligence.<br />
+            <span className="bl-banner-accent">Delivered.</span>
+          </motion.h1>
+          <motion.p
+            className="bl-banner-sub"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.65, delay: 0.25 }}
+          >
+            Expert analysis, investment strategies, and wealth-building insights — curated for your financial future.
+          </motion.p>
+        </div>
+        <div className="bl-banner-grid-lines" aria-hidden="true" />
+      </section>
 
-            {/* BODY */}
-            <div className="blog-body">
-              <span className="blog-index">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+      {loading ? (
+        <div className="bl-loader-wrap">
+          <div className="bl-loader" />
+        </div>
+      ) : blogs.length === 0 ? (
+        <div className="bl-empty">No articles published yet.</div>
+      ) : (
+        <div className="bl-content">
 
-              {/* TITLE — clickable, max 2 lines */}
-              <Link to={`/blog-detail/${blog.blog_id}`} className="blog-title-link">
-                <h5 className="blog-title">{blog.name}</h5>
+          {/* ── FEATURED ARTICLE ── */}
+          {hero && (
+            <motion.div
+              className="bl-featured"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <Link to={`/blog-detail/${hero.blog_id}`} className="bl-featured-img-link">
+                <div className="bl-featured-img-wrap">
+                  {hero.image ? (
+                    <img src={`${BASE_URL}/${hero.image}`} alt={hero.name} className="bl-featured-img" />
+                  ) : (
+                    <div className="bl-featured-img-placeholder" />
+                  )}
+                  <div className="bl-featured-img-overlay" />
+                  <span className="bl-tag bl-tag--featured">Featured</span>
+                </div>
               </Link>
-
-              {/* DESCRIPTION — plain text, max 3 lines, no scroll */}
-              <p className="blog-desc">
-                {stripHtml(blog.description)}
-              </p>
-
-              <div className="blog-footer">
-                <span className="blog-date">{formatDate(blog.date)}</span>
-
-                {/* ARROW BUTTON — clickable */}
-                <Link to={`/blog-detail/${blog.blog_id}`} className="blog-btn">
-                  →
+              <div className="bl-featured-body">
+                <div className="bl-featured-meta">
+                  <span className="bl-tag bl-tag--article">Article</span>
+                  <span className="bl-meta-date">{formatDate(hero.date)}</span>
+                </div>
+                <Link to={`/blog-detail/${hero.blog_id}`} className="bl-featured-title-link">
+                  <h2 className="bl-featured-title">{hero.name}</h2>
+                </Link>
+                <p className="bl-featured-desc">{stripHtml(hero.description)}</p>
+                <Link to={`/blog-detail/${hero.blog_id}`} className="bl-read-btn">
+                  Read Article
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </Link>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+            </motion.div>
+          )}
+
+          {/* ── REST OF ARTICLES GRID ── */}
+          {rest.length > 0 && (
+            <>
+              <div className="bl-section-title-row">
+                <h3 className="bl-section-title">More Articles</h3>
+                <div className="bl-section-line" />
+              </div>
+              <motion.div
+                className="bl-grid"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-80px" }}
+              >
+                {rest.map((blog, idx) => (
+                  <motion.article
+                    key={blog.blog_id}
+                    className="bl-card"
+                    variants={cardVariants}
+                  >
+                    <Link to={`/blog-detail/${blog.blog_id}`} className="bl-card-img-link">
+                      <div className="bl-card-img-wrap">
+                        {blog.image ? (
+                          <img src={`${BASE_URL}/${blog.image}`} alt={blog.name} className="bl-card-img" />
+                        ) : (
+                          <div className="bl-card-img-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9l4 4 4-4 6 8"/></svg>
+                          </div>
+                        )}
+                        <span className="bl-card-num">0{idx + 2}</span>
+                      </div>
+                    </Link>
+                    <div className="bl-card-body">
+                      <div className="bl-card-meta">
+                        <span className="bl-tag bl-tag--article">Article</span>
+                        <span className="bl-meta-date">{formatDate(blog.date)}</span>
+                      </div>
+                      <Link to={`/blog-detail/${blog.blog_id}`} className="bl-card-title-link">
+                        <h3 className="bl-card-title">{blog.name}</h3>
+                      </Link>
+                      <p className="bl-card-desc">{stripHtml(blog.description)}</p>
+                      <Link to={`/blog-detail/${blog.blog_id}`} className="bl-card-arrow" aria-label="Read article">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                      </Link>
+                    </div>
+                  </motion.article>
+                ))}
+              </motion.div>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }

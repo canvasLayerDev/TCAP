@@ -1,0 +1,27 @@
+#!/usr/bin/expect -f
+set timeout 30
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST "
+TOKEN=\$(curl -s -X POST https://tcapitalwealth.com/tcap/index.php/Welcome/login \
+  -H 'Content-Type: application/json' \
+  -d '{\"username\":\"admin\",\"password\":\"tcap@admin2024\"}' | grep -o '\"token\":\"[^\"]*\"' | cut -d'\"' -f4)
+echo 'Got token'
+echo \$TOKEN | head -c 30
+RESULT=\$(curl -s -X POST https://tcapitalwealth.com/tcap/index.php/Welcome/add_blog \
+  -H \"Authorization: Bearer \$TOKEN\" \
+  -F 'name=Retirement Planning with Smart Investment: Build a Secure Financial Future' \
+  -F 'slug=retirement-planning-smart-investment' \
+  -F 'meta_description=Learn how retirement planning with smart investments can help you build long-term wealth, generate passive income, and secure your financial future.' \
+  -F 'focus_keyword=Retirement Planning with Smart Investment' \
+  -F 'date=2026-04-18' \
+  -F 'description=<p>Retirement is one of the most important financial goals in life. <strong>Retirement planning with smart investment</strong> is essential to ensure financial independence and a comfortable lifestyle after retirement. With increasing life expectancy and rising inflation, relying solely on savings is not enough.</p>' \
+  -F 'details=<h2>Why Retirement Planning is Important</h2><p>Retirement planning ensures you maintain your lifestyle even after your regular income stops. Without proper planning, retirement years may become financially challenging.</p><h3>Key Benefits of Retirement Planning</h3><ul><li>Financial independence after retirement</li><li>Protection against inflation</li><li>Healthcare expense management</li><li>Long-term wealth creation</li><li>Peace of mind</li></ul><h2>When Should You Start?</h2><p>The best time to start is as early as possible.</p><ul><li>Start at age 25: Smaller investment, larger corpus</li><li>Start at age 40: Higher investment needed</li><li>Start at age 50: Limited growth opportunity</li></ul><h2>Smart Investment Options</h2><h3>1. Equity Mutual Funds</h3><p>Offer higher growth potential, professional management, and compounding returns.</p><h3>2. Fixed Income Investments</h3><p>Bonds, FDs, debt mutual funds — provide portfolio stability and capital preservation.</p><h3>3. Retirement Pension Plans</h3><p>Generate regular income after retirement with predictable cash flow.</p><h2>Step-by-Step Strategy</h2><ol><li><strong>Define Goals</strong> — age, expenses, healthcare, travel</li><li><strong>Calculate Corpus</strong> — consider inflation and life expectancy</li><li><strong>Diversify Portfolio</strong> — equity, mutual funds, gold, real estate</li><li><strong>Invest Consistently</strong> — SIPs and long-term commitments</li></ol><h2>Common Mistakes</h2><ul><li>Delaying retirement planning</li><li>Ignoring inflation</li><li>Lack of diversification</li><li>Emotional investing</li></ul><h2>Role of TCapital Wealth</h2><p>TCapital Wealth provides personalized retirement strategies based on individual goals, helping clients achieve financial independence.</p><h2>Conclusion</h2><p>Start planning today with TCapital Wealth to build a strong retirement corpus and enjoy a stress-free retirement.</p>')
+echo \"\$RESULT\"
+"
+expect "password:"
+send "$PASSWORD\r"
+expect eof

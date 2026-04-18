@@ -9,7 +9,7 @@ function BlogList() {
   const [loading, setLoading] = useState(true)
   const [deleteConfirm, setDeleteConfirm] = useState(null)
 
-  const BASE_URL = 'https://tcapitalwealth.com/tcap'
+  const BASE_URL = import.meta.env.VITE_API_URL || 'https://tcapitalwealth.com/tcap'
 
   useEffect(() => {
     fetchBlogs()
@@ -19,7 +19,7 @@ function BlogList() {
     try {
       setLoading(true)
       const response = await blogApi.getAllBlogs()
-      if (response.status === 'true') {
+      if (response && String(response.status).toLowerCase() === 'true') {
         setBlogs(response.data || [])
       } else {
         toast.error(response.message || 'Failed to fetch blogs')
@@ -93,13 +93,14 @@ function BlogList() {
               <th>Title</th>
               <th>Description</th>
               <th>Date</th>
+              <th>Status</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {blogs.length === 0 ? (
               <tr>
-                <td colSpan="5" className="text-center py-4">
+                <td colSpan="6" className="text-center py-4">
                   <p className="mb-0">No blogs found</p>
                   <Link to="/blogs/create" className="btn btn-sm btn-outline-primary mt-2">
                     Create your first blog
@@ -132,6 +133,13 @@ function BlogList() {
                   </td>
                   <td className="blog-date-cell">
                     {formatDate(blog.date)}
+                  </td>
+                  <td className="blog-status-cell">
+                    {blog.blog_status === 'published' ? (
+                      <span className="badge bg-success" style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Live</span>
+                    ) : (
+                      <span className="badge bg-secondary" style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Draft</span>
+                    )}
                   </td>
                   <td className="blog-actions-cell">
                     <div className="action-buttons">

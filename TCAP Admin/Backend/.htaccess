@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks -MultiViews
+    RewriteEngine On
+
+    # Short-circuit OPTIONS preflight immediately — must be before any other rules
+    RewriteCond %{REQUEST_METHOD} =OPTIONS
+    RewriteRule ^ - [R=200,L]
+
+    # CodeIgniter URL routing
+    RewriteBase /tcap/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Restrict CORS to trusted origins only
+    SetEnvIf Origin "^https://(admin\.tcapitalwealth\.com|tcapitalwealth\.com|www\.tcapitalwealth\.com|localhost:5173|localhost:5174)$" CORS_ALLOWED=$0
+    Header always set Access-Control-Allow-Origin    "%{CORS_ALLOWED}e"    env=CORS_ALLOWED
+    Header always set Access-Control-Allow-Methods   "GET, POST, OPTIONS"
+    Header always set Access-Control-Allow-Headers   "Content-Type, Authorization, X-Admin-Token, X-Requested-With"
+    Header always set Access-Control-Max-Age         "3600"
+</IfModule>

@@ -1,0 +1,26 @@
+#!/usr/bin/expect -f
+set timeout 60
+
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+# 1. Deploy Main Frontend
+spawn rsync -avze "ssh -o StrictHostKeyChecking=no -p $PORT" "TCAP Main/dist/" "$USER@$HOST:domains/tcapitalwealth.com/public_html/"
+expect "password:"
+send "$PASSWORD\r"
+expect eof
+
+# 2. Deploy Admin Frontend
+spawn rsync -avze "ssh -o StrictHostKeyChecking=no -p $PORT" "TCAP Admin/dist/" "$USER@$HOST:domains/tcapitalwealth.com/public_html/admin/"
+expect "password:"
+send "$PASSWORD\r"
+expect eof
+
+# 3. Deploy Backend
+spawn rsync -avze "ssh -o StrictHostKeyChecking=no -p $PORT" "TCAP Admin/Backend/" "$USER@$HOST:domains/tcapitalwealth.com/public_html/tcap/"
+expect "password:"
+send "$PASSWORD\r"
+expect eof
+

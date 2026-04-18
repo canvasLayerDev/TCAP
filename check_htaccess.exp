@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+set timeout 10
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST "cat ~/domains/tcapitalwealth.com/public_html/tcap/.htaccess || echo 'FILE NOT FOUND'"
+expect "password:"
+send "$PASSWORD\r"
+expect eof

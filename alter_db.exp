@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+set timeout 10
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST "mysql -u u555641943_tcap -p'Kw4kN#uqnW.#KJw' u555641943_tcap -e \"ALTER TABLE tbl_blog ADD COLUMN IF NOT EXISTS slug VARCHAR(300) DEFAULT NULL, ADD COLUMN IF NOT EXISTS meta_description TEXT DEFAULT NULL, ADD COLUMN IF NOT EXISTS focus_keyword VARCHAR(255) DEFAULT NULL; DESCRIBE tbl_blog;\""
+expect "password:"
+send "$PASSWORD\r"
+expect eof

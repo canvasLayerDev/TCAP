@@ -238,8 +238,9 @@ function Consult_form({ onClose }) {
     };
 
     try {
+      const baseUrl = import.meta.env.VITE_API_URL || "https://tcapitalwealth.com/tcap";
       const res = await axios.post(
-        "https://tcapitalwealth.com/tcap/index.php/Welcome/send",
+        `${baseUrl}/index.php/Welcome/send`,
         payload
       );
 

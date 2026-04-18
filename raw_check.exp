@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+set timeout 20
+set HOST "46.202.161.37"
+set PORT "65002"
+set USER "u555641943"
+set PASSWORD "Kw4kN#uqnW.#KJw"
+
+spawn ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST {curl -sv https://tcapitalwealth.com/tcap/index.php/Welcome/list_blog -X POST 2>&1 | tail -30}
+expect "password:"
+send "$PASSWORD\r"
+expect eof

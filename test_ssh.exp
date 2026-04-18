@@ -1,0 +1,6 @@
+#!/usr/bin/expect -f
+set timeout 10
+spawn ssh -o StrictHostKeyChecking=no -p 65002 u555641943@46.202.161.37 "ls -la domains/tcapitalwealth.com/public_html"
+expect "password:"
+send "Kw4kN#uqnW.#KJw\r"
+expect eof
