@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Do not redirect API requests for the backend
+  RewriteCond %{REQUEST_URI} ^/tcap/ [NC]
+  RewriteRule ^ - [L]
+
+  # Do not redirect if already pointing to admin
+  RewriteCond %{REQUEST_URI} ^/admin/ [NC]
+  RewriteRule ^ - [L]
+
+  # Rewrite everything else into the /admin/ folder
+  RewriteRule ^(.*)$ /admin/$1 [L]
+</IfModule>

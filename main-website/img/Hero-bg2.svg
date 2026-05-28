@@ -1,0 +1,97 @@
+<!-- save as hero-bg.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="subtle looping neon waves background">
+  <defs>
+    <!-- background -->
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="rgb(1,17,32)"/>
+      <stop offset="100%" stop-color="rgb(1,14,28)"/>
+    </linearGradient>
+
+    <!-- tiny soft glow filter for neon hint -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- even subtler blur for very faint strokes -->
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="s"/>
+      <feMerge>
+        <feMergeNode in="s"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- gentle gradients used on strokes -->
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#2e4f5d" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#14303a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#07151a" stop-opacity="0.35"/>
+    </linearGradient>
+
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#4a2b4f" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#173a39" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <linearGradient id="g3" x1="0" x2="1">
+      <stop offset="0%" stop-color="#2fa6ff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#9b3eff" stop-opacity="0.28"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background rect -->
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+
+  <!-- faint blurred blobs to add depth (very subtle) -->
+  <g filter="url(#soft)" opacity="0.08">
+    <ellipse cx="200" cy="120" rx="420" ry="140" fill="#0b2630"/>
+    <ellipse cx="1400" cy="220" rx="480" ry="180" fill="#2a0b2d"/>
+  </g>
+
+  <!-- multiple thin looping scribbles. pointer-events none so clicks pass through -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+
+    <!-- very faint top scribble (thin) -->
+    <path d="M-150 120
+             C 50 80, 200 40, 360 80
+             C 520 120, 680 60, 860 120
+             C 1040 180, 1240 100, 1700 60"
+          stroke="url(#g1)" stroke-width="1.2" stroke-opacity="0.14"/>
+
+    <!-- main looping scribble with soft glow (center-right loops) -->
+    <g filter="url(#glow)" opacity="0.38">
+      <path d="M-200 300
+               C 40 200, 240 160, 460 220
+               C 680 280, 820 120, 980 300
+               C 1140 480, 1280 220, 1700 260"
+            stroke="url(#g3)" stroke-width="2.2" stroke-opacity="0.6"/>
+    </g>
+
+    <!-- second looping scribble (thin multi-color hint) -->
+    <path d="M-150 420
+             C 80 360, 340 320, 540 420
+             C 760 540, 980 300, 1250 520
+             C 1480 700, 1650 460, 1800 540"
+          stroke="url(#g2)" stroke-width="1.6" stroke-opacity="0.28"/>
+
+    <!-- small accent loop near center (very faint, darker) -->
+    <path d="M760 360
+             C 780 320, 820 300, 860 340
+             C 900 380, 920 420, 880 450"
+          stroke="#081a20" stroke-width="2.6" stroke-opacity="0.12"/>
+
+    <!-- extra delicate top-right trailing strokes -->
+    <path d="M1100 80
+             C 1180 60, 1300 20, 1500 40"
+          stroke="#253241" stroke-width="1" stroke-opacity="0.08"/>
+  </g>
+
+  <!-- final ultra-faint texture line across bottom (for subtle separation) -->
+  <path d="M0 860 C 260 720, 560 700, 980 740 C 1350 780, 1600 820, 1600 820"
+        fill="none" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1"/>
+
+</svg>
